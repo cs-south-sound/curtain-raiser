@@ -107,4 +107,4 @@ requested in response to the ssh request.
 4. [wikipedia](https://en.wikipedia.org/wiki/Ssh-keygen)
 5. example [rsa-algorithm](https://justcryptography.com/rsa-algorithm/)
 6. git-to-use-ssh-key [so](https://stackoverflow.com/questions/23546865/how-to-configure-command-line-git-to-use-ssh-key)
-
+7. on MS Windows try [git bash](https://gitforwindows.org/) or [wsl](https://learn.microsoft.com/en-us/windows/wsl/)
