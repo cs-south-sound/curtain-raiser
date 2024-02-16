@@ -57,6 +57,43 @@ whom the key belongs.
   ssh-copy-id username@ipaddress 
   ```
 
+## Client configuration
+
+> Since we are expecting to employ multiple keys for several projects a configuration file will be needed.
+
+On the client computer write the config file by hand at the command prompt
+`vim ~/.ssh/config`
+
+For example here is a template:
+
+```bash
+Host uniqueServerName
+    HostName topLevelDomain.com
+    User username
+    Port 22
+    Identityfile ~/.ssh/id_mykeyname-rsa.pub
+    HostKeyAlgoritms ssh-rsa
+```
+Replace the contents of each variable with names specific to your
+server.  Also note that the port may be customized by your
+administrator to something other than 22.  Check with your
+administrator or the server specifications. If you are the admin;
+good luck!
+
+
+## Connecting to the server
+
+Since the server connecting information has been typed into the ssh
+configuration file, only the Host alias is needed.  For example:
+
+```bash
+ssh uniqueServerName
+#OR
+sftp uniqueServerName
+```
+If a passphrase was entered during key creation, that phrase will be
+requested in response to the ssh request.
+
 ## Reference
 
 1. ssh.com [academy](https://www.ssh.com/academy/ssh/keygen)
@@ -64,4 +101,5 @@ whom the key belongs.
 3. [linux.die.net](https://linux.die.net/man/1/ssh-keygen)
 4. [wikipedia](https://en.wikipedia.org/wiki/Ssh-keygen)
 5. example[rsa-algorithm/](https://justcryptography.com/rsa-algorithm/)
+6. git-to-use-ssh-key[so](https://stackoverflow.com/questions/23546865/how-to-configure-command-line-git-to-use-ssh-key)
 
