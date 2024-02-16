@@ -1,15 +1,14 @@
 # SSH-KEYGEN
 
-> Generate keys for secure shell access to a server
-> A discussion specifically for cs-south-sound projects 
-
+> Generate keys for secure shell access to a server,
+> a discussion specifically for cs-south-sound projects.
 ## Help
 
 The `man` command will provide some hints, 
 ```bash
 man ssh-keygen
 ```
-See the reference section below for an online man pages
+See the reference section below for online man pages
 
 > Note there is no command line help argument like -h that returns hints
 
@@ -21,10 +20,15 @@ Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 ```
 
-In the directory `~/.ssh/` expect two files named:
+In the directory `~/.ssh/` expect two (or more) files named:
 ```bash
-  * id_mykeyname-rsa      (secret - do not share it)
-  * id_mykeyname-rsa.pub  (public and not secret)
+id_mykeyname-rsa      (secret - do not share it)
+id_mykeyname-rsa.pub  (public and not secret)
+```
+
+try
+```bash
+ls -al ~/.ssh
 ```
 
 The importance of defining a key name is the expectation to be working
@@ -41,7 +45,7 @@ cat ~/.ssh/id_mykeyname-rsa.pub
 
 Finally note that the comment `myusername` is added to the end of the key.
 It may not be necessary, but some applications may expect the username.
-Additionally it may be a helpful for the server administrator to know to
+Additionally it may be helpful for the server administrator to know to
 whom the key belongs.
 
 ## Share the public key
@@ -62,6 +66,7 @@ whom the key belongs.
 > Since we are expecting to employ multiple keys for several projects a configuration file will be needed.
 
 On the client computer write the config file by hand at the command prompt
+
 `vim ~/.ssh/config`
 
 For example here is a template:
@@ -100,6 +105,6 @@ requested in response to the ssh request.
 2. [man7](https://www.man7.org/linux/man-pages/man1/ssh-keygen.1.html)
 3. [linux.die.net](https://linux.die.net/man/1/ssh-keygen)
 4. [wikipedia](https://en.wikipedia.org/wiki/Ssh-keygen)
-5. example[rsa-algorithm/](https://justcryptography.com/rsa-algorithm/)
-6. git-to-use-ssh-key[so](https://stackoverflow.com/questions/23546865/how-to-configure-command-line-git-to-use-ssh-key)
+5. example [rsa-algorithm](https://justcryptography.com/rsa-algorithm/)
+6. git-to-use-ssh-key [so](https://stackoverflow.com/questions/23546865/how-to-configure-command-line-git-to-use-ssh-key)
 
