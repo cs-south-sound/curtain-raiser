@@ -56,9 +56,9 @@ whom the key belongs.
 * Submit directly to a server where you already have a password with:
 
   ```bash
-  ssh-copy-id username@url
+  ssh-copy-id -i ~/.ssh/id_mykeyname-rsa.pub username@url
   #OR
-  ssh-copy-id username@ipaddress 
+  ssh-copy-id -i ~/.ssh/id_mykeyname-rsa.pub username@ipaddress 
   ```
 
 ## Client configuration
