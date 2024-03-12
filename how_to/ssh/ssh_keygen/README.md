@@ -4,7 +4,7 @@
 > a discussion specifically for cs-south-sound projects.
 ## Help
 
-The `man` command will provide some hints, 
+The `man` command will provide some hints,
 ```bash
 man ssh-keygen
 ```
@@ -26,7 +26,19 @@ id_mykeyname-rsa      (secret - do not share it)
 id_mykeyname-rsa.pub  (public and not secret)
 ```
 
-try
+Allow user entrance to the directory with the `cd` command for example.
+```bash
+chmod 700 $HOME/.ssh
+```
+
+Minimize permissions on the keys to read/write for the user only.
+( Avoids the error message: WARNING: UNPROTECTED PRIVATE KEY FILE! )
+```bash
+chmod 600 id_mykeyname-rsa
+chmod 600 id_mykeyname-rsa.pub
+```
+
+Confirm the changes.
 ```bash
 ls -al ~/.ssh
 ```
@@ -43,7 +55,7 @@ cat ~/.ssh/id_mykeyname-rsa
 cat ~/.ssh/id_mykeyname-rsa.pub
 ```
 
-Finally note that the comment `myusername` is added to the end of the key.
+Finally, note that the comment `myusername` is added to the end of the key.
 It may not be necessary, but some applications may expect the username.
 Additionally it may be helpful for the server administrator to know to
 whom the key belongs.
@@ -58,7 +70,7 @@ whom the key belongs.
   ```bash
   ssh-copy-id -i ~/.ssh/id_mykeyname-rsa.pub username@url
   #OR
-  ssh-copy-id -i ~/.ssh/id_mykeyname-rsa.pub username@ipaddress 
+  ssh-copy-id -i ~/.ssh/id_mykeyname-rsa.pub username@ipaddress
   ```
 
 ## Client configuration
