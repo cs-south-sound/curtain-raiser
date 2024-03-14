@@ -98,4 +98,5 @@ __gnupg: There is no assurance this key belongs to the named user__ [so](https:/
 2. GnuPG [wikipedia](https://en.wikipedia.org/wiki/GNU_Privacy_Guard)
 3. [How-to](https://www.howtogeek.com/427982/how-to-encrypt-and-decrypt-files-with-gpg-on-linux/)
 4. [Guide](https://dev.to/nerdynene/extensive-guide-to-gnu-privacy-guard-gpg-2a11)
+5. [Tutorial](https://www.golinuxcloud.com/tutorial-encrypt-decrypt-sign-file-gpg-key-linux/)
 
