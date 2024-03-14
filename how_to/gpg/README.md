@@ -48,7 +48,7 @@ passphrase known only to you. ([4](https://dev.to/nerdynene/extensive-guide-to-g
    gpg --import collaborator-fullname-public-key.asc
    ```
 
-6. Encrypt a message with your long-key-id
+6. Encrypt a message with public key-id (or email address) from the collaborator.  NOTE: This is not your key, it is the public key from the other person that you received in step 5.
 
    ```bash
    gpg -r long-key-id -a -e a-confidential-message.txt
@@ -67,6 +67,30 @@ passphrase known only to you. ([4](https://dev.to/nerdynene/extensive-guide-to-g
    ```
 
 For additional key management search the following references.
+
+## Troubleshooting
+
+__gpg: decryption failed: No secret key__
+
+* The collaborator should have used the public key that you provided to them, to encrypt the file that was sent to you.
+
+__gnupg: There is no assurance this key belongs to the named user__ [so](https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user#answer-34132924)
+
+    ```bash
+    gpg --edit-key <KEY_ID>
+    gpg> trust
+    1 = I don't know or won't say
+    2 = I do NOT trust
+    3 = I trust marginally
+    4 = I trust fully
+    5 = I trust ultimately
+    m = back to the main menu
+
+    Your decision? 5
+    Do you really want to set this key to ultimate trust? (y/N) y
+
+    gpg> quit
+    ```
 
 ## References
 
