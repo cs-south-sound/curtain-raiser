@@ -1,6 +1,6 @@
 # GPG
 
-> GNU Privacy Guard
+> GNU Privacy Guard [:link:](https://gnupg.org/)
 
 > Transmit confidential encrypted project information between collaborators.
 
