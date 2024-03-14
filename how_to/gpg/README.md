@@ -58,7 +58,7 @@ passphrase known only to you. ([4](https://dev.to/nerdynene/extensive-guide-to-g
 
    * attach the message to an email or share another way
 
-7. Decrypt a message with the senders public key-id, and then
+7. Decrypt a message with the receivers public key-id, and then
    save to a file.  GPG will automatically search the keyring
    for the matching public key.
 
